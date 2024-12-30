@@ -1,0 +1,24 @@
+datasource db {
+    provider = "mongodb"
+    url = env("DATABASE_URL")
+}
+generator clint  {
+    provider = "prisma-client-js"
+}
+
+model User {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String    @unique // Add @unique to the email field
+  userRole  userRole
+  password  String
+  createdAT DateTime  @default(now())
+  updatedAT DateTime  @updatedAt
+}
+
+enum userRole {
+  admin
+  doctor
+  user
+}
+
