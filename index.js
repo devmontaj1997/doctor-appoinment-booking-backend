@@ -20,7 +20,7 @@ const app = express();
 // express middleWare
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:4173","https://doctor-appointment-booking-client-brown.vercel.app"],
     credentials: true,
   })
 );
